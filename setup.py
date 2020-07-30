@@ -6,7 +6,7 @@ requires = [
 ]
 
 setup(
-    name='youtube_api',
+    name='youtube-api',
     version='0.1.0',
     description='YouTube api',
     license='MIT',
