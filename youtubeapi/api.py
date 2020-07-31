@@ -33,31 +33,25 @@ class Api:
         return ChannelListResponse.from_dict(response)
 
     def get_channel_playlists(
-            self, channel_id, limit: int = 50,
-            next_page_token=None,
-            prep_page_token=None
+            self, channel_id, limit: int = 50, page_token=None
     ) -> Union[PlaylistResponse, None]:
         request = self.client.playlists().list(
             part="snippet",
             channelId=channel_id,
             maxResults=limit,
-            nextPageToken=next_page_token,
-            prepPageToken=prep_page_token
+            pageToken=page_token
         )
         response = request.execute()
         return PlaylistResponse.from_dict(response)
 
     def get_playlist_items(
-            self, playlist_id: str, limit: int = 50,
-            next_page_token=None,
-            prep_page_token=None
+            self, playlist_id: str, limit: int = 50, page_token=None
     ) -> Union[PlaylistItemListResponse, None]:
         request = self.client.playlistItems().list(
             part="snippet",
             playlistId=playlist_id,
             maxResults=limit,
-            nextPageToken=next_page_token,
-            prepPageToken=prep_page_token
+            pageToken=page_token
         )
         response = request.execute()
         return PlaylistItemListResponse.from_dict(response)
