@@ -42,6 +42,8 @@ class PageInfo:
 class BaseApiResponse:
     kind: Optional[str] = field(default=None)
     etag: Optional[str] = field(default=None, repr=False)
+    nextPageToken: Optional[str] = field(default=None, repr=False)
+    prevPageToken: Optional[str] = field(default=None, repr=False)
     page_info: Optional[PageInfo] = field(default=None, repr=False)
 
 
