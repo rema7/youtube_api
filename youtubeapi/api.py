@@ -2,7 +2,7 @@ from typing import Union, List
 
 from apiclient.discovery import build
 
-from .models.channel import Channel, ChannelListResponse
+from .models.channel import ChannelListResponse
 from .models.playlist import PlaylistResponse
 from .models.playlist_item import PlaylistItemListResponse
 from .models.videos import VideoListResponse
