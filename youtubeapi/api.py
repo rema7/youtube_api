@@ -27,7 +27,7 @@ class Api:
     def get_channel_by_username(self, username) -> Union[ChannelListResponse, None]:
         request = self.client.channels().list(
             part="snippet",
-            forUserName=username,
+            forUsername=username,
         )
         response = request.execute()
         return ChannelListResponse.from_dict(response)
