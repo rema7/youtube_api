@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 requires = [
-    'google-api-python-client>=1.10.0,<1.11.0',
+    'google-api-python-client>=1.10.0',
     'dataclasses-json>=0.5.2',
 ]
 
