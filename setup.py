@@ -1,4 +1,5 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from setuptools import setup
 
 requires = [
     'google-api-python-client>=1.10.0',
@@ -6,7 +7,7 @@ requires = [
 ]
 
 setup(
-    name='youtube-api',
+    name='youtubeapi',
     version='0.1.0',
     description='YouTube api',
     license='MIT',
