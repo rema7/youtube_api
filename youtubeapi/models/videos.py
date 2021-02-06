@@ -1,9 +1,15 @@
-from dataclasses import dataclass, field
-from typing import Optional, List
+from dataclasses import dataclass
+from dataclasses import field
+from typing import List
+from typing import Optional
 
-from dataclasses_json import dataclass_json, LetterCase, DataClassJsonMixin
+from dataclasses_json import DataClassJsonMixin
+from dataclasses_json import LetterCase
+from dataclasses_json import dataclass_json
 
-from .common import Thumbnails, BaseResource, BaseApiResponse
+from .common import BaseApiResponse
+from .common import BaseResource
+from .common import Thumbnails
 
 
 @dataclass_json(letter_case=LetterCase.CAMEL)
@@ -20,8 +26,18 @@ class VideoSnippet(DataClassJsonMixin):
 
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
+class VideoStatistics(BaseResource):
+    view_count: Optional[int] = field(default=None)
+    like_count: Optional[int] = field(default=None)
+    dislike_count: Optional[int] = field(default=None, repr=False)
+    comment_count: Optional[int] = field(default=None, repr=False)
+
+
+@dataclass_json(letter_case=LetterCase.CAMEL)
+@dataclass
 class Video(BaseResource):
     snippet: Optional[VideoSnippet] = field(default=None, repr=False)
+    statistics: Optional[VideoStatistics] = field(default=None, repr=False)
 
 
 @dataclass
